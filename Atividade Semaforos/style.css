@@ -1,0 +1,31 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+body{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.top{
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+
+h1,h3{    
+    color: #dd183f;
+
+}
+
+img{
+    display: flex;
+    
+}
