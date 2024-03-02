@@ -2,7 +2,7 @@ package desenvolvimento_de_software.exercicios.estruturas_sequenciais;
 
 import java.util.Scanner;
 
-public class exe1 {
+public class exe2 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
@@ -10,13 +10,18 @@ public class exe1 {
         int um = input.nextInt();       
         System.out.print("Segundo numero: ");
         int dois = input.nextInt();
+        System.out.print("Terceiro numero: ");
+        int tres = input.nextInt();
 
-        int num = um;
-        if(num > dois){
-            System.out.printf("%d ,%d", dois, um);
-        }else{
-            System.out.printf("%d, %d", um, dois);
+        int menor = um;
+        if(menor > dois){
+            menor = dois;
         }
+        if(menor > tres){
+            menor = tres;
+        }
+
+        System.out.print("Menor numero: " + menor);
         input.close();
     }    
 }
