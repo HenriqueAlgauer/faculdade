@@ -7,11 +7,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/contato.css">
     <title>Contato</title>
 </head>
 <body>
-    
+    <header class="header">
+        <h2 class="title-header">Revisão</h2>
+
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="tabela.html">Tabela</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="metade2">
+            <div class="texto">
+                <h1>Contato</h1>
+                <p>Entre em contato para tirar suas dúvidas</p>
+            </div>
+            <div class="formulario">
+                <form action="POST">
+                    <label for="nome">Nome do Aluno</label>
+                    <input name="nome" type="text" id="nome" placeholder="Jhon Doe">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="jhondoe@gmail.com">
+                    <label for="tel">Telefone</label>
+                    <input type="tel" name="tel" id="tel" placeholder="(DDD) 0000-0000">
+                    <label for="area">Mensagem</label>
+                    <textarea type="text" name="area" rows="10" cols="50" id="area" placeholder="Descreva aqui sua necessidade"></textarea>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados ©</p>
+    </footer>
 </body>
 </html>
