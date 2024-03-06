@@ -1,12 +1,10 @@
 package exercicios.estruturas_de_repeticao;
 
-import java.util.Scanner;
-
 public class exe1 {
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Informe");
+        for(int i =0; i<11; i++){
+            System.out.print(i+"\n");
+        }
         
     }
 }
