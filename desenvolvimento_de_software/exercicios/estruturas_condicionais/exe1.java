@@ -1,4 +1,4 @@
-package desenvolvimento_de_software.exercicios.estruturas_condicionais;
+package exercicios.estruturas_condicionais;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package desenvolvimento_de_software.exercicios.estruturas_sequenciais;
+package exercicios.estruturas_sequenciais;
 
 
 //Escreva um programa que converta números inteiros, de sua representação numérica pararepresentação em extenso. O programa deverá solicitar ao usuário um número inteiro (de 0 a 9) emostrar na tela o valor em extenso. Por exemplo, se o usuário digitar "7", o programa deverá mostrar"Sete". Se o usuário digitar um valor fora da faixa prevista (de 0 a 9), o programa deverá mostrar"Valor inválido!".

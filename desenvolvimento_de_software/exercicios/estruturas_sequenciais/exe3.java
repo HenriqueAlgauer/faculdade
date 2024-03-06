@@ -1,4 +1,4 @@
-package desenvolvimento_de_software.exercicios.estruturas_sequenciais;
+package exercicios.estruturas_sequenciais;
 
 import java.util.Scanner;
 
