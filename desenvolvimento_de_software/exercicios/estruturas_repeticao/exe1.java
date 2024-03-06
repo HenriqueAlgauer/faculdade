@@ -1,4 +1,3 @@
-package exercicios.estruturas_repeticao;
 
 class exe1 {
 
