@@ -12,7 +12,7 @@ public class exe3 {
             System.out.print(i+"\n");
             total++;
         }
-        System.out.print("Total"+total);
+        System.out.print("Total: "+total);
 
         input.close();
     }
