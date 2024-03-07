@@ -13,5 +13,6 @@ public class exe4 {
 
         }while(num != 0);
         System.out.print("\nSoma: "+soma);
+        input.close();
     }
 }
