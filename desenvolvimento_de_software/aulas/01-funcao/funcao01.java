@@ -6,7 +6,7 @@ public class funcao01 {
     }
     public static void main(String[]args){
         
-        linha(5, '|');
+        linha(15, '*');
         System.out.print("");        
     }
 }
