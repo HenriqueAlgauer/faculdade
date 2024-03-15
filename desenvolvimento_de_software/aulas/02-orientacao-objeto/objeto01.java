@@ -23,7 +23,9 @@ class Pessoa {
 
     public void pararDeFalar(){
         if(this.falando == false){
-            
+            System.out.println(this.nome + " não está falando");
+        }else{
+            System.out.println(this.nome + " parou de falar");
         }
         this.falando = false;
         System.out.println(this.nome + " ja parou de falar");
@@ -56,5 +58,7 @@ class objeto01 {
 
         p1.status();
         p2.status();
+
+        p2.falar();
     }
 }
