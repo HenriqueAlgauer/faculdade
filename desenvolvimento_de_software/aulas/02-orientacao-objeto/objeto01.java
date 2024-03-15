@@ -14,10 +14,10 @@ class Pessoa {
 
     public void falar() {
         if (this.falando == true){
-            System.out.println(this.nome + " ja esta falando");
+            System.out.println(this.nome + " já esta falando");
         }else{
             this.falando = true;
-            System.out.println(this.nome + " esta falando");
+            System.out.println(this.nome + " está falando");
         }        
     }
 
@@ -27,6 +27,18 @@ class Pessoa {
         }
         this.falando = false;
         System.out.println(this.nome + " ja parou de falar");
+    }
+
+    public void comer(String alimento){
+        if(this.falando == true){
+            System.out.println(this.nome + " não pode comer, pois está falando");
+        }
+        else if(this.comendo == true){
+            System.out.println(this.nome + " já está comendo" + alimento);
+        }else{
+            this.comendo = true;
+            System.out.println(this.nome + " está comendo" + alimento);
+        }
     }
 }
 
