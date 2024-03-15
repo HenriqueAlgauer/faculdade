@@ -2,8 +2,8 @@
     "java.project.sourcePaths": [
         "src",
         "exercicios/estruturas_repeticao",
-        "aulas/funcao",
-        "aulas/02-orientacao-objeto"
+        "aulas/02-orientacao-objeto",
+        "aulas/01-funcao"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
