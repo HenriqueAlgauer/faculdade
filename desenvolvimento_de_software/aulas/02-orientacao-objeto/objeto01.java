@@ -9,7 +9,6 @@ class Pessoa {
         System.out.println("Idade: " + this.idade);
         System.out.println("Falando: " + this.falando);
         System.out.println("Comendo: " + this.comendo);
-
     }
 
     public void falar() {
