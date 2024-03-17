@@ -8,9 +8,9 @@ class ContaDeLuz{
             case 1: 
                 this.valorPagar = kws * 0.6;break;
             case 2: 
-                this.valorPagar = kws * 0.6;break;
+                this.valorPagar = kws * 0.48;break;
             case 3: 
-                this.valorPagar = kws * 0.6;break;
+                this.valorPagar = kws * 1.29;break;
             default: System.out.print("Insira um valor válido: \n1-(PF) \n2-(Comércio) \n3-(Indústria)");
         }
 
@@ -19,5 +19,10 @@ class ContaDeLuz{
 }
 
 public class exe03 {
+    public static void main(String[] args){
+        ContaDeLuz c1 = new ContaDeLuz();
 
+        c1.calculaValor(1, 100);
+        System.out.print(c1.valorPagar);
+    }
 }
