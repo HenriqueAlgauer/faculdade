@@ -10,4 +10,5 @@ public class exe2 {
         double media = soma/numbers.length;
         System.out.printf("Media: %.2f", media);
     }
+    
 }
