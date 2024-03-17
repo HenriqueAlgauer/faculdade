@@ -16,7 +16,7 @@ class Numeros{
     }
 }
 
-public class exe05 {
+class exe05 {
     public static void main(String[] args){
         Numeros n1 = new Numeros();
 

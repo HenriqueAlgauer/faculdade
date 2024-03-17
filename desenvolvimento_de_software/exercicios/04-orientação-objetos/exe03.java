@@ -18,7 +18,7 @@ class ContaDeLuz{
     }
 }
 
-public class exe03 {
+class exe03 {
     public static void main(String[] args){
         ContaDeLuz c1 = new ContaDeLuz();
 

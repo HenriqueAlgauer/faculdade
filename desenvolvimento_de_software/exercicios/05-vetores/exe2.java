@@ -1,4 +1,4 @@
-public class exe2 {
+class exe2 {
     public static void main(String[] args){
         float[] numbers = {20,1,17,10,20};
         float soma = 0;
@@ -16,6 +16,5 @@ public class exe2 {
                 System.out.print(numbers[i]+" | ");
             }
         }
-
     }
 }
