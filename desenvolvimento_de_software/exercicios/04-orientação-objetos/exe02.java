@@ -12,11 +12,11 @@ class Professor{
                 this.totalSalario = horas * 25;break;
             case 3: 
                 this.totalSalario = horas * 30;break;
+            default: 
+                System.out.print("Insira um nível válido: 1, 2 ou 3 =D");  
         }
-
         return this.totalSalario;
     }
-        
 }
 
 public class exe02 {
