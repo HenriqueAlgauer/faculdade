@@ -9,7 +9,6 @@ class Pessoa {
         System.out.println("Idade: " + this.idade);
         System.out.println("Falando: " + this.falando);
         System.out.println("Comendo: " + this.comendo);
-
     }
 
     public void falar() {
@@ -56,7 +55,7 @@ class Pessoa {
 }
 
 class objeto01 {
-
+    
     public static void main(String[] args) {
         Pessoa p1 = new Pessoa();
         p1.nome = "Marcelo";
