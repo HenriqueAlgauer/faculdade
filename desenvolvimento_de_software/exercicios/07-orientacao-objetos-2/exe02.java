@@ -48,5 +48,9 @@ class exe0002 {
    
         System.out.println(predo.idade);
         System.out.println(predo.altura);
+        
+        predo.engordar(10);
+        System.out.println(predo.peso);
+
     }
 }
