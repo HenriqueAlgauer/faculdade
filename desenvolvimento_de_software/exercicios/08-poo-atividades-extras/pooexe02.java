@@ -7,11 +7,11 @@ class Player{
     int points;
     int level;
 
-    void changePoints(int points){
-        this.points += points;
+    int changePoints(int points){
+        return this.points += points;
     }
-    void changeLevel(int level){
-        this.level += level;
+    int changeLevel(int level){
+        return this.level += level;
     }
     void status(){
         System.out.println("Name: " + this.name);
