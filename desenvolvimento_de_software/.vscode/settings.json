@@ -1,17 +1,13 @@
 {
     "java.project.sourcePaths": [
         "src",
-        "provas",
-        "exercicios/08-poo-atividades-extras",
         "exercicios/07-orientacao-objetos-2",
         "exercicios/06-matriz",
         "exercicios/05-vetores",
         "exercicios/04-orientação-objetos",
-        "aulas/05-aula",
-        "aulas/04-aula",
-        "aulas/03-orientacao-objeto",
+        "aulas/06-aula",
         "aulas/02-orientacao-objeto",
-        "aulas/06-aula"
+        "aulas/05-aula"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
