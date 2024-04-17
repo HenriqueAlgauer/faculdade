@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 class Livro{
     public String nome;
     public String autor;
     //public int ano;
+=======
+class Autor{
+    public String nome;
+    public int idade;
+
+    public Autor(String nome, int idade){
+        setNome(nome);
+        setIdade(idade);
+    }
+>>>>>>> fc536311ac6058c447e583e275f2da831e59d67b
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -9,6 +20,7 @@ class Livro{
     public String getNome() {
         return nome;
     }
+<<<<<<< HEAD
     
     public void setAutor(String autor) {
         this.autor = autor;
@@ -66,5 +78,31 @@ class aula06exe2 {
         //     System.out.print(bb1.livrosBib[i].autor + ": ");
         //     //System.out.print(bb1.livrosBib[i].ano + "\n");
         // }
+=======
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    public int getIdade() {
+        return idade;
+    }
+}
+
+class Livro{ 
+    public String titulo;
+    public int anoPub;
+    public Autor autor;
+}
+
+
+class aula06exe2 {
+    public static void main(String[] args){
+        Autor autor1 = new Autor("jose", 54);
+        Autor autor2 = new Autor("bibo", 68);
+
+
+        System.out.println(autor1.nome);
+
+>>>>>>> fc536311ac6058c447e583e275f2da831e59d67b
     }
 }

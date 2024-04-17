@@ -45,19 +45,62 @@ class Time{
     }
 }
 
+class Autor{
+    public String nome;
+    public int idade;
+
+    public Autor(String nome, int idade){
+        setNome(nome);
+        setIdade(idade);
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getNome() {
+        return nome;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    public int getIdade() {
+        return idade;
+    }
+}
+
+class Livro{ 
+    public String titulo;
+    public int anoPub;
+    public Autor autor;
+}
+
+
+
 class aula06 {
     public static void main(String[] args){
-        Jogador jg1 = new Jogador("Pato", "Atacante");
-        Jogador jg2 = new Jogador("Mosquito", "Bicheiro");
 
-        Time tm1 = new Time("NPFC");
 
-        tm1.addJogador(jg1);
-        tm1.addJogador(jg2);
+        Autor autor1 = new Autor("jose", 54);
+        Autor autor2 = new Autor("bibo", 68);
 
-        for(int i =0;i<tm1.numJogador; i++){
-            System.out.print(tm1.jogadoresTime[i].nome+ ": ");
-            System.out.print(tm1.jogadoresTime[i].posicao + "\n");
-        }
+
+        System.out.println(autor1.nome);
+
+
+
+
+        // Jogador jg1 = new Jogador("Pato", "Atacante");
+        // Jogador jg2 = new Jogador("Mosquito", "Bicheiro");
+
+        // Time tm1 = new Time("NPFC");
+
+        // tm1.addJogador(jg1);
+        // tm1.addJogador(jg2);
+
+        // for(int i =0;i<tm1.numJogador; i++){
+        //     System.out.print(tm1.jogadoresTime[i].nome+ ": ");
+        //     System.out.print(tm1.jogadoresTime[i].posicao + "\n");
+        // }
     }
 }
