@@ -1,3 +1,0 @@
-class pooexe03 {
-    
-}
