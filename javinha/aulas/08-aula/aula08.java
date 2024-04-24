@@ -14,6 +14,7 @@ public class aula08 {
         if(estoque.containsKey("Maçã")){
             System.out.println("Tem maçã no estoque");
         }
+        
     }
 
     public static void mostrarEstoque(Map<String, Integer> estoque){
