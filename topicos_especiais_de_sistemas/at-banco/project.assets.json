@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\aula01\\primeiroprojeto.csproj",
-      "projectName": "primeiroprojeto",
-      "projectPath": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\aula01\\primeiroprojeto.csproj",
+      "projectUniqueName": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\topicos_especiais_de_sistemas.csproj",
+      "projectName": "topicos_especiais_de_sistemas",
+      "projectPath": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\topicos_especiais_de_sistemas.csproj",
       "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\aula01\\obj\\",
+      "outputPath": "D:\\VisualStudioCODE\\faculdade\\topicos_especiais_de_sistemas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config",
