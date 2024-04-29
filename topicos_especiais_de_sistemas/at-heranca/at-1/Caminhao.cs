@@ -9,9 +9,9 @@ public class Caminhao : Veiculo
         CapacidadeDeCarga = capacidadeDeCarga;
     }
 
-    // public override void ExibirInfo()
-    // {
-    //     base.ExibirInfo();
-    //     Console.WriteLine($"Capacidade de Carga: {CapacidadeDeCarga}");
-    // }
+    public override void ExibirInfo()
+    {
+        base.ExibirInfo();
+        Console.WriteLine($"Capacidade de Carga: {CapacidadeDeCarga}");
+    }
 }

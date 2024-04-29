@@ -7,9 +7,9 @@ public class Moto : Veiculo
         Cilindrada = cilindrada;
     }
 
-    // public new void ExibirInfo()
-    // {
-    //     base.ExibirInfo();
-    //     Console.WriteLine($"Cilindrada: {Cilindrada}");
-    // }
+    public new void ExibirInfo()
+    {
+        base.ExibirInfo();
+        Console.WriteLine($"Cilindrada: {Cilindrada}");
+    }
 }

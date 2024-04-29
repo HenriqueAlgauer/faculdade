@@ -9,9 +9,9 @@ public class Carro : Veiculo
         NumeroDePortas = numeroDePortas;
     }
 
-    // public override void ExibirInfo()
-    // {
-    //     base.ExibirInfo();
-    //     Console.WriteLine($"Número de Portas: {NumeroDePortas}");
-    // }
+    public override void ExibirInfo()
+    {
+        base.ExibirInfo();
+        Console.WriteLine($"Número de Portas: {NumeroDePortas}");
+    }
 }
