@@ -14,4 +14,8 @@ public class Veiculo
     {
         Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}");
     }
+
+    public virtual void Ligar(){
+        Console.WriteLine("Veiculo ligado");
+    }
 }

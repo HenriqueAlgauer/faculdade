@@ -12,4 +12,8 @@ public class Moto : Veiculo
         base.ExibirInfo();
         Console.WriteLine($"Cilindrada: {Cilindrada}");
     }
+
+    public override void Ligar(){
+        Console.WriteLine("Moto ligada");
+    }
 }
