@@ -12,8 +12,8 @@ public class Veiculo
     }
 
     // Método para exibir informações básicas do veículo
-    public void ExibirInfo()
-    {
-        Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}");
-    }
+    // public void ExibirInfo()
+    // {
+    //     Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}");
+    // }
 }
