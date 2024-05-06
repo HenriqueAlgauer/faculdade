@@ -1,8 +1,8 @@
 class Filme{
-    public string titulo;
-    public string genero;
-    public int duracao;
-    public bool disponivel;
+    public string titulo {get; set;}
+    public string genero {get; set;}
+    public int duracao {get; set;}
+    public bool disponivel {get; set;}
 
     public Filme(string titulo, string genero, int duracao){
         this.titulo = titulo;
