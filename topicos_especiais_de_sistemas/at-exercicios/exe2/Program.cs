@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Filme filme = new Filme("F1", "drama", 120);
+
+filme.locar();
+filme.locar();
+filme.devolucao();
+filme.devolucao();
+filme.locar();
