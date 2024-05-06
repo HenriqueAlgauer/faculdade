@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
+        "exercicios/09-mapas",
         "aulas/08-aula",
         "aulas/07-aula",
         "aulas/06-aula",
@@ -8,6 +9,6 @@
         "aulas/03-orientacao-objeto",
         "aulas/02-orientacao-objeto",
         "aulas/01-funcao",
-        "exercicios/09-mapas"
+        "aulas/09-aula"
     ]
 }
