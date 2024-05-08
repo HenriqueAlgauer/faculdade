@@ -28,6 +28,7 @@ class Veiculo {
             System.out.println( "Não foi possível realizar a viagem!");
         }else{
             System.out.println("Viagem realizada com sucesso! Restaram " + restante + " litros de combustível no veículo!");
+            setCombustivel(restante);
         }
     }
 
@@ -95,10 +96,40 @@ class Veiculo {
     }
 }
 
+class Carro extends Veiculo{
+
+    public void acelerar(){
+        System.out.println("Carro acelerando");
+    }
+    public void frear(){
+        System.out.println("Carro freando");
+    }
+    public Carro(String marca, String modelo, int anoFabricacao, double combustivel, double consumoMedio){
+        super(marca, modelo, anoFabricacao, combustivel, consumoMedio);
+    }
+}
+
+
+class Moto extends Veiculo{
+
+    public void acelerar(){
+        System.out.println("Moto acelerando");
+    }
+    public void frear(){
+        System.out.println("Moto freando");
+    }
+    public Moto(String marca, String modelo, int anoFabricacao, double combustivel, double consumoMedio){
+        super(marca, modelo, anoFabricacao, combustivel, consumoMedio);
+    }
+}
+
 public class aula10 {
     public static void main(String[] args){
-
         ArrayList<Veiculo> frota = new ArrayList<>();
+
+        Carro fuque = new Carro("Vw", "Fuque", 2010, 30, 9);
+        Moto moto = new Moto("Honda", "125", 2000, 10, 40);
+    
         System.out.println("Oi");
     }
 }
