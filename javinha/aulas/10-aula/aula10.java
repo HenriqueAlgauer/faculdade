@@ -130,6 +130,10 @@ public class aula10 {
         Carro fuque = new Carro("Vw", "Fuque", 2010, 30, 9);
         Moto moto = new Moto("Honda", "125", 2000, 10, 40);
     
+        moto.acelerar();
+        fuque.acelerar();
+
+        frota.add(fuque);
         System.out.println("Oi");
     }
 }
