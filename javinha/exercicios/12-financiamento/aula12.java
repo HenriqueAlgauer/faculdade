@@ -1,37 +1,46 @@
 class Financiamento{
-    public double valorTotal;
-    public double entrada;
+    public double valorFinanciado;
     public int parcelas;
+    public double taxa;
+
+    public double valorTotal(){
+        var total = getValorFinanciado() + (getValorFinanciado() * (getTaxa()*0.01) * getParcelas());
+        return total;
+    }
 
     public double valorPrestacao(){
-        return((getValorTotal() - getEntrada()) / getParcelas());
+        return valorTotal()  / getParcelas();
     }
 
-    public Financiamento(double valorTotal, double entrada, int parcelas){
+    public void info(){
+        System.out.println("Valor financiado: " +getValorFinanciado());
+        System.out.println("Parcelas: " +getParcelas());
+        System.out.println("Taxa: " +getTaxa());
+        System.out.println("Total: " + valorTotal());
+    }
 
-        if(entrada < valorTotal * 0.2){
+    public Financiamento(double valorFinanciado, int parcelas, double taxa){
+
+        if( valorFinanciado < 0 || taxa < 0 || parcelas < 0){
             throw new RuntimeException("A entrada deve ser de pelo menos 20%");
         }
-        else if(parcelas < 6){
-            throw new RuntimeException("O numero minimo de parcelas deve ser 6");
-        }
-        setValorTotal(valorTotal);
-        setEntrada(entrada);
+        setValorFinanciado(valorFinanciado);
         setParcelas(parcelas);
+        setTaxa(taxa);
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setTaxa(double taxa) {
+        this.taxa = taxa;
     }
-    public double getValorTotal() {
-        return valorTotal;
+    public double getTaxa() {
+        return taxa;
     }
 
-    public void setEntrada(double entrada) {
-        this.entrada = entrada;
+    public void setValorFinanciado(double valorFinanciado) {
+        this.valorFinanciado = valorFinanciado;
     }
-    public double getEntrada() {
-        return entrada;
+    public double getValorFinanciado() {
+        return valorFinanciado;
     }
 
     public void setParcelas(int parcelas) {
@@ -44,11 +53,11 @@ class Financiamento{
 
 public class aula12 {
     public static void main(String[] args){
-        double valorTotal = 1000;
-        double entrada = 200;
+        double valorFinanciado = 20000;
         int parcelas = 10;
+        double taxa = 1;
         try{
-            Financiamento f = new Financiamento(valorTotal, entrada, parcelas);
+            Financiamento f = new Financiamento(valorFinanciado, parcelas, taxa);
             System.out.println(f.valorPrestacao()); 
         }
         catch (RuntimeException e){
