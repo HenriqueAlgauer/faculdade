@@ -27,4 +27,31 @@ app.MapPost("/criarproduto", async(LojaDbContext dbContext, Produto newProduto)=
     return Results.Created($"/criarproduto/{newProduto.Id}", newProduto);
 });
 
+
+app.MapGet("/produtos", async(LojaDbContext dbContext)=>{
+
+    var produtos = await dbContext.Produtos.ToListAsync();
+    return Results.Ok(produtos);
+});
+
+app.MapGet("/produtos/{id}", async(int id, LojaDbContext dbContext)=>{
+
+    var produto = await dbContext.Produtos.FindAsync(id);
+    if(produto == null){
+        return Results.NotFound($"Produto com id{id} nao encontrado.");
+    }
+    return Results.Ok(produto);
+});
+
+app.MapPut("/produtos/{id}", async(int id, LojaDbContext dbContext)=>{
+
+    var produto = await dbContext.Produtos.FindAsync(id);
+    if(produto == null){
+        return Results.NotFound($"Produto com id{id} nao encontrado.");
+    }
+    return Results.Ok(produto);
+});
+
 app.Run();
+
+
