@@ -36,4 +36,9 @@ public class Produto {
     public int getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
+    
+    @Override
+    public String toString() {
+        return codigoProduto + ";" + nomeProduto + ";" + precoUnitario + ";" + quantidadeEstoque;
+    }
 }
