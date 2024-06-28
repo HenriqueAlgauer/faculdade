@@ -40,7 +40,7 @@ public class Main {
                     System.out.println("Opção inválida.");
             }
         }
-        scanner.close();
+        
     }
 
     private static void menuProdutos() {
@@ -79,7 +79,7 @@ public class Main {
                     System.out.println("Opção inválida.");
             }
         }
-        scanner.close();
+        
     }
 
     private static void menuPedidos() {
@@ -106,7 +106,7 @@ public class Main {
                     System.out.println("Opção inválida.");
             }
         }
-        scanner.close();
+        
     }
 
     private static void incluirProduto() {
@@ -121,7 +121,7 @@ public class Main {
         Produto produto = new Produto(codigoProdutoAtual++, nomeProduto, precoUnitario, quantidadeEstoque);
         produtos.add(produto);
         System.out.println("Produto incluído com sucesso!");
-        scanner.close();
+        
     }
 
     private static void editarQuantidadeEstoque() {
@@ -137,7 +137,7 @@ public class Main {
         } else {
             System.out.println("Produto não encontrado.");
         }
-        scanner.close();
+        
     }
 
     private static void editarPrecoUnitario() {
@@ -153,7 +153,7 @@ public class Main {
         } else {
             System.out.println("Produto não encontrado.");
         }
-        scanner.close();
+        
     }
 
     private static void excluirProduto() {
@@ -167,7 +167,7 @@ public class Main {
         } else {
             System.out.println("Produto não encontrado.");
         }
-        scanner.close();
+        
     }
 
     private static void listarProdutos() {
@@ -193,37 +193,56 @@ public class Main {
 
     private static void novoPedido() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Código do produto: ");
-        int codigoProduto = scanner.nextInt();
-        Produto produto = encontrarProduto(codigoProduto);
-        if (produto != null) {
-            System.out.print("Quantidade: ");
-            int quantidade = scanner.nextInt();
-            if (produto.getQuantidadeEstoque() >= quantidade) {
-                Pedido pedido = new Pedido(numeroPedidoAtual++, codigoProduto, produto.getPrecoUnitario(), quantidade);
-                pedidos.add(pedido);
-                produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - quantidade);
-                System.out.println("Pedido realizado com sucesso!");
+        Pedido pedido = new Pedido(numeroPedidoAtual++);
+        boolean adicionarMaisProdutos = true;
+    
+        while (adicionarMaisProdutos) {
+            System.out.print("Código do produto: ");
+            int codigoProduto = scanner.nextInt();
+            Produto produto = encontrarProduto(codigoProduto);
+            if (produto != null) {
+                System.out.print("Quantidade: ");
+                int quantidade = scanner.nextInt();
+                if (produto.getQuantidadeEstoque() >= quantidade) {
+                    pedido.adicionarProduto(codigoProduto, produto.getPrecoUnitario(), quantidade);
+                    produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - quantidade);
+                    System.out.println("Produto adicionado ao pedido.");
+                } else {
+                    System.out.println("Quantidade em estoque insuficiente.");
+                }
             } else {
-                System.out.println("Quantidade em estoque insuficiente.");
+                System.out.println("Produto não encontrado.");
             }
-        } else {
-            System.out.println("Produto não encontrado.");
+    
+            System.out.print("Deseja adicionar mais um produto a este pedido? (s/n): ");
+            adicionarMaisProdutos = scanner.next().equalsIgnoreCase("s");
         }
-        scanner.close();
+    
+        pedidos.add(pedido);
+        System.out.println("Pedido realizado com sucesso!");
     }
 
     private static void listarPedidos() {
         for (Pedido pedido : pedidos) {
             System.out.println("Pedido número: " + pedido.getNumeroPedido());
-            System.out.println("Produto                                         Preço unitário   Quantidade   Subtotal");
+            System.out.println("Produto                                 Preço unitário   Quantidade   Subtotal        22");
             System.out.println("--------------------------------------------------------------------------------------");
-            Produto produto = encontrarProduto(pedido.getCodigoProduto());
-            if (produto != null) {
-                double subtotal = pedido.getPrecoUnitario() * pedido.getQuantidade();
-                System.out.printf("%-45s%-15.2f%-10d%-10.2f\n", produto.getNomeProduto(), pedido.getPrecoUnitario(), pedido.getQuantidade(), subtotal);
+            double valorTotalPedido = 0;
+            List<Integer> codigos = pedido.getCodigosProdutos();
+            List<Double> precos = pedido.getPrecosUnitarios();
+            List<Integer> quantidades = pedido.getQuantidades();
+    
+            for (int i = 0; i < codigos.size(); i++) {
+                Produto produto = encontrarProduto(codigos.get(i));
+                if (produto != null) {
+                    double subtotal = precos.get(i) * quantidades.get(i);
+                    valorTotalPedido += subtotal;
+                    System.out.printf("%-45s%-15.2f%-10d%-10.2f\n", produto.getNomeProduto(), precos.get(i), quantidades.get(i), subtotal);
+                }
             }
             System.out.println("--------------------------------------------------------------------------------------");
+            System.out.printf("Valor total pedido: %.2f\n", valorTotalPedido);
+            System.out.println("\n");
         }
     }
 
@@ -263,8 +282,14 @@ public class Main {
                         int codigoProduto = Integer.parseInt(partes[1]);
                         double preco = Double.parseDouble(partes[2]);
                         int quantidade = Integer.parseInt(partes[3]);
-                        pedidos.add(new Pedido(numero, codigoProduto, preco, quantidade));
-                        numeroPedidoAtual = Math.max(numeroPedidoAtual, numero + 1);
+    
+                        Pedido pedido = encontrarPedido(numero);
+                        if (pedido == null) {
+                            pedido = new Pedido(numero);
+                            pedidos.add(pedido);
+                            numeroPedidoAtual = Math.max(numeroPedidoAtual, numero + 1);
+                        }
+                        pedido.adicionarProduto(codigoProduto, preco, quantidade);
                     } catch (NumberFormatException e) {
                         System.out.println("Erro ao converter os dados do pedido: " + linha);
                     }
@@ -275,6 +300,15 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Erro ao carregar pedidos: " + e.getMessage());
         }
+    }
+    
+    private static Pedido encontrarPedido(int numero) {
+        for (Pedido pedido : pedidos) {
+            if (pedido.getNumeroPedido() == numero) {
+                return pedido;
+            }
+        }
+        return null;
     }
 
     private static void salvarProdutos() {

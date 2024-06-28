@@ -1,38 +1,50 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pedido {
     private int numeroPedido;
-    private int codigoProduto;
-    private double precoUnitario;
-    private int quantidade;
+    private List<Integer> codigosProdutos;
+    private List<Double> precosUnitarios;
+    private List<Integer> quantidades;
 
-    public Pedido(int numeroPedido, int codigoProduto, double precoUnitario, int quantidade){
-        setNumeroPedido(numeroPedido);
-        setCodigoProduto(codigoProduto);
-        setPrecoUnitario(precoUnitario);
-        setQuantidade(quantidade);
-    }
-    public void setNumeroPedido(int numeroPedido) {
+    public Pedido(int numeroPedido) {
         this.numeroPedido = numeroPedido;
-    }
-    public void setCodigoProduto(int codigoProduto) {
-        this.codigoProduto = codigoProduto;
-    }
-    public void setPrecoUnitario(double precoUnitario) {
-        this.precoUnitario = precoUnitario;
-    }
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+        this.codigosProdutos = new ArrayList<>();
+        this.precosUnitarios = new ArrayList<>();
+        this.quantidades = new ArrayList<>();
     }
 
     public int getNumeroPedido() {
         return numeroPedido;
     }
-    public int getCodigoProduto() {
-        return codigoProduto;
+
+    public List<Integer> getCodigosProdutos() {
+        return codigosProdutos;
     }
-    public double getPrecoUnitario() {
-        return precoUnitario;
+
+    public List<Double> getPrecosUnitarios() {
+        return precosUnitarios;
     }
-    public int getQuantidade() {
-        return quantidade;
+
+    public List<Integer> getQuantidades() {
+        return quantidades;
+    }
+
+    public void adicionarProduto(int codigoProduto, double precoUnitario, int quantidade) {
+        this.codigosProdutos.add(codigoProduto);
+        this.precosUnitarios.add(precoUnitario);
+        this.quantidades.add(quantidade);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < codigosProdutos.size(); i++) {
+            sb.append(numeroPedido).append(";")
+              .append(codigosProdutos.get(i)).append(";")
+              .append(precosUnitarios.get(i)).append(";")
+              .append(quantidades.get(i)).append("\n");
+        }
+        return sb.toString();
     }
 }
