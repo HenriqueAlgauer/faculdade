@@ -275,7 +275,6 @@ public class Main {
         try (BufferedReader br = new BufferedReader(new FileReader("pedidos.txt"))) {
             String linha;
             while ((linha = br.readLine()) != null) {
-                // Ignorar linhas vazias
                 if (linha.trim().isEmpty()) {
                     continue;
                 }
@@ -337,3 +336,74 @@ public class Main {
         }
     }
 }
+
+// função antiga
+// private static void carregarPedidos() {
+//     try (BufferedReader br = new BufferedReader(new FileReader("pedidos.txt"))) {
+//         String linha;
+//         while ((linha = br.readLine()) != null) {
+//             String[] partes = linha.split(";");
+//             if (partes.length == 4) {
+//                 try {
+//                     int numero = Integer.parseInt(partes[0]);
+//                     int codigoProduto = Integer.parseInt(partes[1]);
+//                     double preco = Double.parseDouble(partes[2]);
+//                     int quantidade = Integer.parseInt(partes[3]);
+
+//                     Pedido pedido = encontrarPedido(numero);
+//                     if (pedido == null) {
+//                         pedido = new Pedido(numero);
+//                         pedidos.add(pedido);
+//                         numeroPedidoAtual = Math.max(numeroPedidoAtual, numero + 1);
+//                     }
+//                     pedido.adicionarProduto(codigoProduto, preco, quantidade);
+//                 } catch (NumberFormatException e) {
+//                     System.out.println("Erro ao converter os dados do pedido: " + linha);
+//                 }
+//             } else {
+//                 System.out.println("Formato inválido de linha: " + linha);
+//             }
+//         }
+//     } catch (IOException e) {
+//         System.out.println("Erro ao carregar pedidos: " + e.getMessage());
+//     }
+// }
+
+// Classe pedido
+// private int numeroPedido;
+// private List<Integer> codigosProdutos;
+// private List<Double> precosUnitarios;
+// private List<Integer> quantidades;
+
+// public Pedido(int numeroPedido) {
+//     this.numeroPedido = numeroPedido;
+//     this.codigosProdutos = new ArrayList<>();
+//     this.precosUnitarios = new ArrayList<>();
+//     this.quantidades = new ArrayList<>();
+// }
+
+// public void adicionarProduto(int codigoProduto, double precoUnitario, int quantidade) {
+//     this.codigosProdutos.add(codigoProduto);
+//     this.precosUnitarios.add(precoUnitario);
+//     this.quantidades.add(quantidade);
+// }
+
+// private static Pedido encontrarPedido(int numero) {
+//     for (Pedido pedido : pedidos) {
+//         if (pedido.getNumeroPedido() == numero) {
+//             return pedido;
+//         }
+//     }
+//     return null;
+// }
+
+// Classe Produto
+
+// private int codigoProduto;
+// private String nomeProduto;
+// private double precoUnitario;
+// private int quantidadeEstoque;
+//@Override
+// public String toString() {
+//     return codigoProduto + ";" + nomeProduto + ";" + precoUnitario + ";" + quantidadeEstoque;
+// }
