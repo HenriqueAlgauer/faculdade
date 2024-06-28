@@ -275,6 +275,10 @@ public class Main {
         try (BufferedReader br = new BufferedReader(new FileReader("pedidos.txt"))) {
             String linha;
             while ((linha = br.readLine()) != null) {
+                // Ignorar linhas vazias
+                if (linha.trim().isEmpty()) {
+                    continue;
+                }
                 String[] partes = linha.split(";");
                 if (partes.length == 4) {
                     try {
@@ -310,7 +314,7 @@ public class Main {
         }
         return null;
     }
-
+    
     private static void salvarProdutos() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("produtos.txt"))) {
             for (Produto produto : produtos) {

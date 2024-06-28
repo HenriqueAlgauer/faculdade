@@ -1,5 +1,5 @@
 1;po1;90.0;63
-2;produto 2;20.0;0
+2;produto 2;20.0;313
 3;produto 3;30.0;257
 4;produto 4;40.0;19
 5;produto 5;50.0;459
